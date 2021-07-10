@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>predictive disease analysis</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/checkout/">
+
+
+
+    <!-- Bootstrap core CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+      *{font-family: 'Roboto', sans-serif;}
+
+@keyframes click-wave {
+  0% {
+    height: 40px;
+    width: 40px;
+    opacity: 0.35;
+    position: relative;
+  }
+  100% {
+    height: 200px;
+    width: 200px;
+    margin-left: -80px;
+    margin-top: -80px;
+    opacity: 0;
+  }
+}
+
+.option-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  position: relative;
+  top: 0px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  transition: all 0.15s ease-out 0s;
+  background: #cbd1d8;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 0.5rem;
+  outline: none;
+  position: relative;
+  z-index: 1000;
+}
+.option-input:hover {
+  background: #9faab7;
+}
+.option-input:checked {
+  background: #40e0d0;
+}
+.option-input:checked::before {
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  content: '✔';
+  display: inline-block;
+  font-size: 15.66667px;
+  text-align: center;
+  line-height: 20px;
+}
+.option-input:checked::after {
+  -webkit-animation: click-wave 0.65s;
+  -moz-animation: click-wave 0.65s;
+  animation: click-wave 0.65s;
+  background: #40e0d0;
+  content: '';
+  display: block;
+  position: relative;
+  z-index: 100;
+}
+.option-input.radio {
+  border-radius: 50%;
+}
+.option-input.radio::after {
+  border-radius: 50%;
+}
+
+body {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: box;
+  background: #e8ebee;
+  color: #9faab7;
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  text-align: center;
+}
+body div {
+  padding: 5rem;
+}
+label {
+            display: flex;
+            align-items: center;
+            line-height: 30px;
+            padding-top: 5px;
+        }
+input[type=checkbox]{
+            flex: none;
+
+        }
+
+.body {
+  background-image: radial-gradient(#434343, #000000);
+}
+.col-sm {
+  padding-right:2px;
+}
+
+    </style>
+
+
+    <!-- Custom styles for this template -->
+    <link href="form-validation.css" rel="stylesheet">
+  </head>
+  <body class="bg-light body">
+
+<div class="container-md "  >
+
+    <h3 class="text-light">Disase Prediction System</h3>
+
+
+<form action="{{ url_for('showinput')}}" method="post">
+  <div class="row bg-dark">
+<p class="text-light" style="text_decoration:underline" >Please select the symptoms from the below list </p>
+    <div  class="col-sm">
+  <label>
+    <input type="checkbox" name='all' class="option-input checkbox"value="receiving_blood_transfusion"/>
+    receiving_blood_transfusion
+  </label>
+  <label>
+    <input type="checkbox" name='all' class="option-input checkbox" value="pain_behind_the_eyes" />
+    pain behind the eyes
+  </label>
+  <label>
+    <input type="checkbox" name='all' class="option-input checkbox" value="red_sore_around_nose" />
+    red sore around nose
+  </label>
+  <label>
+    <input type="checkbox"  name='all' class="option-input checkbox"value="abdominal_pain" />
+    abdominal pain
+  </label>
+  <label>
+    <input type="checkbox"  name='all' class="option-input checkbox" value="yellow_crust_ooze"/>
+  yellow crust ooze
+  </label>
+  <label>
+    <input type="checkbox"  name='all' class="option-input checkbox" value="continuous_sneezing" />
+    continuous_sneezing
+  </label>
+  <label>
+    <input type="checkbox" name='all' class="option-input checkbox" value="blackheads" />
+    blackheads
+  </label>
+  <label>
+    <input type="checkbox" name='all' class="option-input checkbox" value="shivering"/>
+    shivering
+  </label>
+  <label>
+    <input type="checkbox" name='all' class="option-input checkbox" value="coma" />
+    coma
+  </label>
+  <label>
+    <input type="checkbox" name='all' class="option-input checkbox" value="dizziness"/>
+    dizziness
+  </label>
+</div>
+<div class="col-sm">
+  <label>
+    <input type="checkbox" name='all' class="option-input checkbox"value="sweating"/>
+    sweating
+  </label>
+  <label>
+    <input type="checkbox" name='all' class="option-input checkbox" value="sunken_eyes" />
+    sunken eyes
+  </label>
+  <label>
+    <input type="checkbox"  name='all' class="option-input checkbox" value="back_pain" />
+    back_pain
+  </label>
+  <label>
+    <input type="checkbox"  name='all' class="option-input checkbox"  value="ulcers_on_tongue"/>
+    ulcers on tongue
+  </label>
+  <label>
+    <input type="checkbox"  name='all' class="option-input checkbox" value="stomach_bleeding"/>
+    stomach bleeding
+  </label>
+  <label>
+    <input type="checkbox"  name='all' class="option-input checkbox" value="neck_pain" />
+    neck_pain
+  </label>
+  <label>
+    <input type="checkbox" name='all' class="option-input checkbox"value="weakness_of_one_body_side" />
+    weakness_of_one_body_side
+  </label>
+  <label>
+    <input type="checkbox" name='all' class="option-input checkbox" value="receiving_unsterile_injections"/>
+    receiving_unsterile_injections
+  </label>
+  <label>
+    <input type="checkbox" name='all' class="option-input checkbox"value="loss_of_balance" />
+  loss_of_balance
+  </label>
+  <label>
+    <input type="checkbox" name='all' class="option-input checkbox" value="fast_heart_rate"/>
+    fast_heart_rate
+  </label>
+  </div>
+  <div class="col-sm">
+    <label>
+      <input type="checkbox" name='all' class="option-input checkbox"value="spotting_ urination"/>
+      spotting_ urination
+    </label>
+    <label>
+      <input type="checkbox" name='all' class="option-input checkbox" value="abnormal_menstruation" />
+      abnormal_menstruation
+    </label>
+    <label>
+      <input type="checkbox"  name='all' class="option-input checkbox" value="dischromic _patches" />
+      dischromic _patches
+    </label>
+    <label>
+      <input type="checkbox"  name='all' class="option-input checkbox" value="dehydration"/>
+      dehydration
+    </label>
+    <label>
+      <input type="checkbox"  name='all' class="option-input checkbox" value="yellowish_skin" />
+      yellowish_skin
+    </label>
+    <label>
+      <input type="checkbox"  name='all' class="option-input checkbox" value="unsteadiness"/>
+      unsteadiness
+    </label>
+    <label>
+      <input type="checkbox" name='all' class="option-input checkbox" value="muscle_weakness" />
+      muscle_weakness
+    </label>
+    <label>
+      <input type="checkbox" name='all' class="option-input checkbox" value="lack_of_concentration"/>
+      lack_of_concentration
+    </label>
+    <label>
+      <input type="checkbox" name='all' class="option-input checkbox" value="chills"/>
+      chills
+    </label>
+    <label>
+      <input type="checkbox" name='all' class="option-input checkbox" value="headache"/>
+      headache
+    </label>
+  </div>
+
+  <div class="col-sm" >
+    <label>
+      <input type="checkbox" name='all' class="option-input checkbox"value="mucoid_sputum"/>
+      mucoid_sputum
+    </label>
+    <label>
+      <input type="checkbox" name='all' class="option-input checkbox" value="chest_pain" />
+      chest_pain
+    </label>
+    <label>
+      <input type="checkbox"  name='all' class="option-input checkbox" value="vomiting"/>
+      vomiting
+    </label>
+    <label>
+      <input type="checkbox"  name='all' class="option-input checkbox" value="loss_of_appetite"/>
+      loss_of_appetite
+    </label>
+    <label>
+      <input type="checkbox"  name='all' class="option-input checkbox" value="breathlessness"/>
+      breathlessness
+    </label>
+    <label>
+      <input type="checkbox"  name='all' class="option-input checkbox" value="red_spots_over_body"/>
+      red_spots_over_body
+    </label>
+    <label>
+      <input type="checkbox" name='all' class="option-input checkbox" value="yellowing_of_eyes"/>
+      yellowing_of_eyes
+    </label>
+    <label>
+      <input type="checkbox" name='all' class="option-input checkbox" value="diarrhoea"/>
+      diarrhoea
+    </label>
+    <label>
+      <input type="checkbox" name='all' class="option-input checkbox" value="high_fever"/>
+      high_fever
+    </label>
+    <label>
+      <input type="checkbox" name='all' class="option-input checkbox" value="nausea"/>
+      nausea
+    </label>
+  </div>
+
+  <div class="col-sm">
+    <label>
+      <input type="checkbox" name='all' class="option-input checkbox"value="muscle_wasting"/>
+      muscle_wasting
+    </label>
+    <label>
+      <input type="checkbox" name='all' class="option-input checkbox" value="altered_sensorium" />
+      altered_sensorium
+    </label>
+    <label>
+      <input type="checkbox"  name='all' class="option-input checkbox" value="joint_pain"/>
+      joint_pain
+    </label>
+    <label>
+      <input type="checkbox"  name='all' class="option-input checkbox" value="stomach_pain"/>
+      stomach_pain
+    </label>
+    <label>
+      <input type="checkbox"  name='all' class="option-input checkbox" value="mild_fever"/>
+      mild_fever
+    </label>
+    <label>
+      <input type="checkbox"  name='all' class="option-input checkbox" value="dark_urine"/>
+      dark_urine
+    </label>
+    <label>
+      <input type="checkbox" name='all' class="option-input checkbox" value="itching"/>
+      itching
+    </label>
+    <label>
+      <input type="checkbox" name='all' class="option-input checkbox" value="fatigue"/>
+      fatigue
+    </label>
+    <label>
+      <input type="checkbox" name='all' class="option-input checkbox" value="weight_loss"/>
+      weight_loss
+    </label>
+    <label>
+      <input type="checkbox" name='all' class="option-input checkbox" value="muscle_pain"/>
+      muscle_pain
+    </label>
+  </div>
+
+
+
+
+</div>
+<div><button type="submit" class="btn btn-primary btn-block btn-large">Predict</button></div>
+</form>
+
+<p class="text-light">{{ prediction_text }}</p>
+
+  <footer class="my-5  text-muted text-center text-small">
+    <p class="mb-1 text-light">&copy; 2017–2021 Company Name</p>
+    <ul class="list-inline">
+      <li class="list-inline-item text-light"><a href="#">Privacy</a></li>
+      <li class="list-inline-item"><a href="#">Terms</a></li>
+      <li class="list-inline-item"><a href="#">Support</a></li>
+    </ul>
+  </footer>
+</div>
+
+
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+      <script src="form-validation.js"></script>
+  </body>
+</html>

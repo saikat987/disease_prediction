@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>Checkout example · Bootstrap v5.0</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/checkout/">
+
+
+
+    <!-- Bootstrap core CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+      *{font-family: 'Roboto', sans-serif;}
+
+@keyframes click-wave {
+  0% {
+    height: 40px;
+    width: 40px;
+    opacity: 0.35;
+    position: relative;
+  }
+  100% {
+    height: 200px;
+    width: 200px;
+    margin-left: -80px;
+    margin-top: -80px;
+    opacity: 0;
+  }
+}
+
+.option-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  position: relative;
+  top: 13.33333px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 40px;
+  width: 40px;
+  transition: all 0.15s ease-out 0s;
+  background: #cbd1d8;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 0.5rem;
+  outline: none;
+  position: relative;
+  z-index: 1000;
+}
+.option-input:hover {
+  background: #9faab7;
+}
+.option-input:checked {
+  background: #40e0d0;
+}
+.option-input:checked::before {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  content: '✔';
+  display: inline-block;
+  font-size: 26.66667px;
+  text-align: center;
+  line-height: 40px;
+}
+.option-input:checked::after {
+  -webkit-animation: click-wave 0.65s;
+  -moz-animation: click-wave 0.65s;
+  animation: click-wave 0.65s;
+  background: #40e0d0;
+  content: '';
+  display: block;
+  position: relative;
+  z-index: 100;
+}
+.option-input.radio {
+  border-radius: 50%;
+}
+.option-input.radio::after {
+  border-radius: 50%;
+}
+
+body {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: box;
+  background: #e8ebee;
+  color: #9faab7;
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  text-align: center;
+}
+body div {
+  padding: 5rem;
+}
+body label {
+  display: block;
+  line-height: 40px;
+}
+
+    </style>
+
+
+    <!-- Custom styles for this template -->
+    <link href="form-validation.css" rel="stylesheet">
+  </head>
+  <body class="bg-light">
+
+<div class="container">
+<form action="{{ url_for('predict')}}"method="post">
+  <div class="row">
+
+    <div  class="col-sm">
+  <label>
+    <input type="checkbox" class="option-input checkbox" checked />
+    Checkbox
+  </label>
+  <label>
+    <input type="checkbox" class="option-input checkbox" />
+    Checkbox
+  </label>
+  <label>
+    <input type="checkbox" class="option-input checkbox" />
+    Checkbox
+  </label>
+  <label>
+    <input type="checkbox" class="option-input checkbox" />
+    Checkbox
+  </label>
+  <label>
+    <input type="checkbox" class="option-input checkbox" />
+    Checkbox
+  </label>
+  <label>
+    <input type="checkbox" class="option-input checkbox" />
+    Checkbox
+  </label>
+  <label>
+    <input type="checkbox" class="option-input checkbox" />
+    Checkbox
+  </label>
+  <label>
+    <input type="checkbox" class="option-input checkbox" />
+    Checkbox
+  </label>
+  <label>
+    <input type="checkbox" class="option-input checkbox" />
+    Checkbox
+  </label>
+</div>
+<div class="col-sm">
+<label>
+<input type="checkbox" class="option-input checkbox" checked />
+Checkbox
+</label>
+<label>
+<input type="checkbox" class="option-input checkbox" />
+Checkbox
+</label>
+<label>
+<input type="checkbox" class="option-input checkbox" />
+Checkbox
+</label>
+<label>
+<input type="checkbox" class="option-input checkbox" />
+Checkbox
+</label>
+<label>
+<input type="checkbox" class="option-input checkbox" />
+Checkbox
+</label>
+<label>
+<input type="checkbox" class="option-input checkbox" />
+Checkbox
+</label>
+<label>
+<input type="checkbox" class="option-input checkbox" />
+Checkbox
+</label>
+<label>
+<input type="checkbox" class="option-input checkbox" />
+Checkbox
+</label>
+<label>
+<input type="checkbox" class="option-input checkbox" />
+Checkbox
+</label>
+  </div>
+  <div class="col-sm">
+  <label>
+  <input type="checkbox" class="option-input checkbox" checked />
+  Checkbox
+  </label>
+  <label>
+  <input type="checkbox" class="option-input checkbox" />
+  Checkbox
+  </label>
+  <label>
+  <input type="checkbox" class="option-input checkbox" />
+  Checkbox
+  </label>
+  <label>
+  <input type="checkbox" class="option-input checkbox" />
+  Checkbox
+  </label>
+  <label>
+  <input type="checkbox" class="option-input checkbox" />
+  Checkbox
+  </label>
+  <label>
+  <input type="checkbox" class="option-input checkbox" />
+  Checkbox
+  </label>
+  <label>
+  <input type="checkbox" class="option-input checkbox" />
+  Checkbox
+  </label>
+  <label>
+  <input type="checkbox" class="option-input checkbox" />
+  Checkbox
+  </label>
+  <label>
+  <input type="checkbox" class="option-input checkbox" />
+  Checkbox
+  </label>
+  </div>
+</div>
+<button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+</form>
+
+  <footer class="my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1">&copy; 2017–2021 Company Name</p>
+    <ul class="list-inline">
+      <li class="list-inline-item"><a href="#">Privacy</a></li>
+      <li class="list-inline-item"><a href="#">Terms</a></li>
+      <li class="list-inline-item"><a href="#">Support</a></li>
+    </ul>
+  </footer>
+</div>
+
+
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+      <script src="form-validation.js"></script>
+  </body>
+</html>
